@@ -19,10 +19,11 @@ const carsSchema        = new Schema({
   description:          String,
   equipment:            String,
   features:             String,
+  picture:              String
 
 
 
 });
 
 const Cars              = mongoose.model('Cars', carsSchema);
-module.exports           = Cars;
+module.exports          = Cars;

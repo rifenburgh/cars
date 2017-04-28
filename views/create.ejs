@@ -1,5 +1,18 @@
 <h2> Create New Car </h2>
 
+<form action="/crud/create" method="POST" enctype="multipart/form-data">
+
+
 <!-- For Multiple File Uploads using Multer -->
 <!-- https://codeforgeek.com/2016/01/multiple-file-upload-node-js/ -->
-<input type="file" name="userPhoto" multiple />
+<!-- <input type="file" name="filename" multiple /> -->
+
+
+<div>
+  <label for="picture-input"> Picture </label>
+  <input id="picture-input" type="file" name="picture">
+</div>
+
+
+<button type="submit" class="btn btn-primary">Create</button>
+</form>
