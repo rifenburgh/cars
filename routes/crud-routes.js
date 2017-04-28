@@ -68,4 +68,37 @@ crudRoutes.get('/edit', el.ensureLoggedIn(), (req, res, next) => {});
 
 crudRoutes.post('/edit', el.ensureLoggedIn(), (req, res, next) => {});
 
+crudRoutes.get('/all', (req, res, next) => {
+  Cars.find({ show: true }, (err, item) => {
+    if (err) {
+      next(err);
+      return;
+    }
+    res.render('all.ejs', { items: item });
+  });
+});
+
+crudRoutes.get('/item/:id', (req, res, next) => {
+  const itemId        = req.params.id;
+  Cars.findById(itemId, (err, items) => {
+    if (err) {
+      next(err);
+      return;
+    }
+    res.render('/show', { item: items });
+  });
+});
+
+crudRoutes.get('/item/:id/delete', (req, res, next) => {
+  const itemId        = req.params.id;
+  Cars.findByIdAndRemove(itemId, (err, item) => {
+    if (err) {
+      next(err);
+      return;
+    }
+    res.redirect('/crud/all');
+  });
+});
+
+
 module.exports          = crudRoutes;
