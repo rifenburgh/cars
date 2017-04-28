@@ -1,0 +1,32 @@
+<h2>Login</h2>
+
+<div class="row">
+  <% if (errorMessage.length > 0) { %>
+    <p class="error"> <%= errorMessage %> </p>
+    <% } %>
+
+
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-4">
+    <form action="/login" method="POST">
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" name="username" placeholder="Username">
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" placeholder="Your password">
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+    </form>
+
+    <a href="/auth/facebook"> Login With Facebook </a>
+    <a href="/auth/google"> Login With Google </a>
+
+  </div>
+  <div class="col-md-4">
+  </div>
+</div>
