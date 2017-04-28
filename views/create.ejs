@@ -2,6 +2,87 @@
 
 <form action="/crud/create" method="POST" enctype="multipart/form-data">
 
+  <div>
+    <label for="make"> Make </label>
+    <input type="text" name="make">
+  </div>
+  <div>
+    <label for="model"> Model </label>
+    <input type="text" name="model">
+  </div>
+  <div>
+    <label for="year"> Year </label>
+    <input type="text" name="year">
+  </div>
+  <div>
+    <label for="miles"> Miles </label>
+    <input type="text" name="miles">
+  </div>
+  <div>
+    <label for="price"> Price </label>
+    <input type="text" name="price">
+  </div>
+  <div>
+    <label for="vin"> VIN </label>
+    <input type="text" name="vin">
+  </div>
+  <div>
+    <label for="stock"> Stock </label>
+    <input type="text" name="stock">
+  </div>
+  <div>
+    <label for="trim"> Trim </label>
+    <input type="text" name="trim">
+  </div>
+  <div>
+    <label for="transmission"> Transmission </label>
+    <input type="text" name="transmission">
+  </div>
+  <div>
+    <label for="speeds"> Speeds </label>
+    <input type="text" name="speeds">
+  </div>
+  <div>
+    <label for="engine"> Engine </label>
+    <input type="text" name="engine">
+  </div>
+  <div>
+    <label for="fuel"> Fuel </label>
+    <input type="text" name="fuel" placeholder="Gasoline">
+  </div>
+  <div>
+    <label for="ext"> Exterior </label>
+    <input type="text" name="ext">
+  </div>
+  <div>
+    <label for="int"> Interior </label>
+    <input type="text" name="int">
+  </div>
+  <div>
+    <label for="show"> Show in Inventory</label>
+    <input type="text" name="show" placeholder="True">
+  </div>
+  <div>
+    <label for="description"> <data value=""></data>Description </label>
+    <textarea name="description" rows="6" >
+    </textarea>
+  </div>
+  <div>
+    <label for="equipment"> Equipment </label>
+    <textarea name="equipment" rows="6" >
+    </textarea>
+  </div>
+  <!-- <div>
+    <label for="features"> Features </label>
+    <input type="text" cols="50" rows="6" name="features" textarea rows="4" cols="50">
+  </div> -->
+  <div>
+    <label for="features"> Features </label>
+    <textarea name="features" rows="6" >Features
+    </textarea>
+</div>
+
+
 
 <!-- For Multiple File Uploads using Multer -->
 <!-- https://codeforgeek.com/2016/01/multiple-file-upload-node-js/ -->
@@ -9,9 +90,38 @@
 
 
 <div>
-  <label for="picture-input"> Picture </label>
-  <input id="picture-input" type="file" name="picture">
+  <label for="picture1"> Picture 1 </label>
+  <input id="picture1" type="file" name="picture1">
 </div>
+<!-- <div>
+  <label for="picture2"> Picture 2 </label>
+  <input id="picture2" type="file" name="picture2">
+</div><div>
+  <label for="picture3"> Picture 3 </label>
+  <input id="picture3" type="file" name="picture3">
+</div><div>
+  <label for="picture4"> Picture 4 </label>
+  <input id="picture4" type="file" name="picture4">
+</div><div>
+  <label for="picture5"> Picture 5 </label>
+  <input id="picture5" type="file" name="picture5">
+</div><div>
+  <label for="picture6"> Picture 6 </label>
+  <input id="picture6" type="file" name="picture6">
+</div><div>
+  <label for="picture7"> Picture 7 </label>
+  <input id="picture7" type="file" name="picture7">
+</div><div>
+  <label for="picture8"> Picture 8 </label>
+  <input id="picture8" type="file" name="picture8">
+</div><div>
+  <label for="picture9"> Picture 9 </label>
+  <input id="picture9" type="file" name="picture9">
+</div><div>
+  <label for="picture10"> Picture 10 </label>
+  <input id="picture10" type="file" name="picture10">
+</div> -->
+
 
 
 <button type="submit" class="btn btn-primary">Create</button>
