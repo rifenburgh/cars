@@ -19,7 +19,7 @@ const carsSchema        = new Schema({
   description:          String,
   equipment:            String,
   features:             String,
-  picture:              String,
+  picture1:              String,
   picture2:             String,
   picture3:             String,
   picture4:             String,

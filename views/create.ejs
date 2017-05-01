@@ -1,7 +1,7 @@
 <h2> Create New Car </h2>
 
-<form action="/crud/create" method="POST" enctype="multipart/form-data">
-
+<!-- <form action="/crud/create" method="POST" enctype="multipart/form-data"> -->
+<form action="/crud/create" method="POST">
   <div>
     <label for="make"> Make </label>
     <input type="text" name="make">
@@ -48,7 +48,7 @@
   </div>
   <div>
     <label for="fuel"> Fuel </label>
-    <input type="text" name="fuel" placeholder="Gasoline">
+    <input type="text" name="fuel" value="Gasoline">
   </div>
   <div>
     <label for="ext"> Exterior </label>
@@ -60,7 +60,7 @@
   </div>
   <div>
     <label for="show"> Show in Inventory</label>
-    <input type="text" name="show" placeholder="True">
+    <input type="text" name="show" value="True">
   </div>
   <div>
     <label for="description"> <data value=""></data>Description </label>
@@ -90,13 +90,15 @@
 
 
 <div>
-  <label for="picture1"> Picture 1 </label>
+  <label for="picture1"> Picture(s) </label>
   <input id="picture1" type="file" name="picture1">
 </div>
-<!-- <div>
+<div>
   <label for="picture2"> Picture 2 </label>
   <input id="picture2" type="file" name="picture2">
-</div><div>
+</div>
+<!--
+<div>
   <label for="picture3"> Picture 3 </label>
   <input id="picture3" type="file" name="picture3">
 </div><div>

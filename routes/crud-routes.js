@@ -39,13 +39,15 @@ crudRoutes.get('/create', el.ensureLoggedIn(), (req, res, next) => {
   res.render('create.ejs', {});
 });
 
-crudRoutes.post('/create', el.ensureLoggedIn(), multerThing.single('picture1'), (req, res, next) => {
+crudRoutes.post('/create', el.ensureLoggedIn(), multerThing.array('picture1'), (req, res, next) => {
   /*
   //Multer NPM package is used to upload pictures
   const multer = require('multer');
   const multerThing = multer({ dest: __dirname + '/../public/uploads/' });
   */
-      console.log('/create POST PIC2 ', req.body.picture2);
+      // console.log(req.files);
+      // const filename    = req.file.filename;
+      const pic         = req.body.picture1;
       const pic1        = req.body.picture1;
       const pic2        = req.body.picture2;
       const pic3        = req.body.picture3;
@@ -76,19 +78,21 @@ crudRoutes.post('/create', el.ensureLoggedIn(), multerThing.single('picture1'), 
         description:          req.body.description,
         equipment:            req.body.equipment,
         features:             req.body.features,
-        picture1:              '/uploads/${pic1}',
-        // picture2:              '/uploads/${pic2}',
-        // picture3:              '/uploads/${pic3}',
-        // picture4:              '/uploads/${pic4}',
-        // picture5:              '/uploads/${pic5}',
-        // picture6:              '/uploads/${pic6}',
-        // picture7:              '/uploads/${pic7}',
-        // picture8:              '/uploads/${pic8}',
-        // picture9:              '/uploads/${pic9}',
-        // picture10:             '/uploads/${pic10}',
+        picture1:              `uploads/${pic}`,
+        // picture1:              `/uploads/${pic1}`,
+        picture2:              `/uploads/${pic2}`,
+        // picture3:              `/uploads/${pic3}`,
+        // picture4:              `/uploads/${pic4}`,
+        // picture5:              `/uploads/${pic5}`,
+        // picture6:              `/uploads/${pic6}`,
+        // picture7:              `/uploads/${pic7}`,
+        // picture8:              `/uploads/${pic8}`,
+        // picture9:              `/uploads/${pic9}`,
+        // picture10:             `/uploads/${pic10}`,
 
-        owner:                req.user._id   // <-- we add the user ID
+        // owner:                req.user._id   // <-- we add the user ID
       });
+      console.log('/create req.body.picture1', req.body.picture1);
       newItem.save((err) => {
         if (err) {
           next(err);
@@ -105,7 +109,7 @@ crudRoutes.get('/edit', el.ensureLoggedIn(), (req, res, next) => {});
 crudRoutes.post('/edit', el.ensureLoggedIn(), (req, res, next) => {});
 
 crudRoutes.get('/all', (req, res, next) => {
-  Cars.find({ show: true }, (err, item) => {
+  Cars.find({ show: true }, (err, item) => {  //this should be TRUE!!!
     if (err) {
       next(err);
       return;
@@ -121,7 +125,8 @@ crudRoutes.get('/item/:id', (req, res, next) => {
       next(err);
       return;
     }
-    res.render('/show', { item: items });
+    res.render('detail.ejs', { item: items });
+    console.log('/item:id ', items);
   });
 });
 
