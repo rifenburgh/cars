@@ -2,8 +2,34 @@ const express           = require('express');
 const crudRoutes        = express.Router();
 const el                = require('connect-ensure-login');
 const Cars              = require('../models/cars-model');
+
 const multer            = require('multer');
-const multerThing       = multer({ dest: __dirname + '/../public/uploads/' });
+const storage           = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, '/../public/uploads');
+  },
+  filename: (req, file, cb) => {
+    cb(null, 'req.file');
+  }
+});
+const multerThing       = multer({ storage: storage });
+
+                          /*
+                          ```
+
+
+
+                          const multer            = require('multer');
+                          const multerThing       = multer({ dest: __dirname + '/../public/uploads/',
+                            filename: function (req, file, cb) {
+                              cb(null, file.originalname) }
+                            });
+                            ```
+                           ,
+                                                      filename: (req, file, cb) => {
+                                                        cb(null, (req.file.filename));
+                                                      }
+                                                      */
 
 //Image Uploads
 /*
@@ -39,14 +65,16 @@ crudRoutes.get('/create', el.ensureLoggedIn(), (req, res, next) => {
   res.render('create.ejs', {});
 });
 
+// crudRoutes.post('/create', el.ensureLoggedIn(), multerThing.array('picture1'), (req, res, next) => {
 crudRoutes.post('/create', el.ensureLoggedIn(), multerThing.array('picture1'), (req, res, next) => {
+
   /*
   //Multer NPM package is used to upload pictures
   const multer = require('multer');
   const multerThing = multer({ dest: __dirname + '/../public/uploads/' });
   */
       // console.log(req.files);
-      // const filename    = req.file.filename;
+      // const filename    = req.files.filename;
       const pic         = req.body.picture1;
       const pic1        = req.body.picture1;
       const pic2        = req.body.picture2;
@@ -78,7 +106,7 @@ crudRoutes.post('/create', el.ensureLoggedIn(), multerThing.array('picture1'), (
         description:          req.body.description,
         equipment:            req.body.equipment,
         features:             req.body.features,
-        picture1:              `uploads/${pic}`,
+        picture1:              `/uploads/${pic}`,
         // picture1:              `/uploads/${pic1}`,
         picture2:              `/uploads/${pic2}`,
         // picture3:              `/uploads/${pic3}`,
@@ -127,6 +155,7 @@ crudRoutes.get('/item/:id', (req, res, next) => {
     }
     res.render('detail.ejs', { item: items });
     console.log('/item:id ', items);
+    console.log('picture2 ', items.picture2);
   });
 });
 
