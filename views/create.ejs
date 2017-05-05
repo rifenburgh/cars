@@ -1,7 +1,7 @@
 <h2> Create New Car </h2>
 
 <!-- <form action="/crud/create" method="POST" enctype="multipart/form-data"> -->
-<form action="/crud/create" method="POST">
+<form action="/crud/create" method="POST" enctype="multipart/form-data">
   <div>
     <label for="make"> Make </label>
     <input type="text" name="make">
@@ -86,17 +86,20 @@
 
 <!-- For Multiple File Uploads using Multer -->
 <!-- https://codeforgeek.com/2016/01/multiple-file-upload-node-js/ -->
-<!-- <input type="file" name="filename" multiple /> -->
+<!-- <input type="file" name="" multiple /> -->
 
 
 <div>
   <label for="picture1"> Picture(s) </label>
-  <input id="picture1" type="file" name="picture1">
+  <input id="picture1" type="file" name="picture1" multiple="multiple">
 </div>
+<!--
 <div>
   <label for="picture2"> Picture 2 </label>
   <input id="picture2" type="file" name="picture2">
 </div>
+-->
+
 <!--
 <div>
   <label for="picture3"> Picture 3 </label>

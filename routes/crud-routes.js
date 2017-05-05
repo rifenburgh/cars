@@ -4,32 +4,26 @@ const el                = require('connect-ensure-login');
 const Cars              = require('../models/cars-model');
 
 const multer            = require('multer');
+//Solution from example W5D3L1
+const uploads           = multer({ dest: __dirname + '/../public/uploads/' });
+
+//Simplist Solution
+// const uploads           = multer();
+
+//  Renaming uploaded file solution from
+// https://github.com/expressjs/multer#diskstorage
+/*
 const storage           = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, '/../public/uploads');
+    // cb(null, '/../public/uploads');
+    cb(null, './uploads');
   },
   filename: (req, file, cb) => {
-    cb(null, 'req.file');
+    cb(null, req.file.filename);
   }
 });
-const multerThing       = multer({ storage: storage });
-
-                          /*
-                          ```
-
-
-
-                          const multer            = require('multer');
-                          const multerThing       = multer({ dest: __dirname + '/../public/uploads/',
-                            filename: function (req, file, cb) {
-                              cb(null, file.originalname) }
-                            });
-                            ```
-                           ,
-                                                      filename: (req, file, cb) => {
-                                                        cb(null, (req.file.filename));
-                                                      }
-                                                      */
+const uploads       = multer({ storage: storage });
+*/
 
 //Image Uploads
 /*
@@ -66,26 +60,22 @@ crudRoutes.get('/create', el.ensureLoggedIn(), (req, res, next) => {
 });
 
 // crudRoutes.post('/create', el.ensureLoggedIn(), multerThing.array('picture1'), (req, res, next) => {
-crudRoutes.post('/create', el.ensureLoggedIn(), multerThing.array('picture1'), (req, res, next) => {
+crudRoutes.post('/create', el.ensureLoggedIn(), uploads.single('picture1'), (req, res, next) => {
 
-  /*
-  //Multer NPM package is used to upload pictures
-  const multer = require('multer');
-  const multerThing = multer({ dest: __dirname + '/../public/uploads/' });
-  */
-      // console.log(req.files);
-      // const filename    = req.files.filename;
-      const pic         = req.body.picture1;
-      const pic1        = req.body.picture1;
-      const pic2        = req.body.picture2;
-      const pic3        = req.body.picture3;
-      const pic4        = req.body.picture4;
-      const pic5        = req.body.picture5;
-      const pic6        = req.body.picture6;
-      const pic7        = req.body.picture7;
-      const pic8        = req.body.picture8;
-      const pic9        = req.body.picture9;
-      const pic10       = req.body.picture11;
+
+      const filename    = req.file.filename;
+      console.log('/create picture1: ');
+      // const pic         = req.body.picture1;
+      // const pic1        = req.body.picture1;
+      // const pic2        = req.body.picture2;
+      // const pic3        = req.body.picture3;
+      // const pic4        = req.body.picture4;
+      // const pic5        = req.body.picture5;
+      // const pic6        = req.body.picture6;
+      // const pic7        = req.body.picture7;
+      // const pic8        = req.body.picture8;
+      // const pic9        = req.body.picture9;
+      // const pic10       = req.body.picture11;
 
       const newItem = new Cars ({
         make:                 req.body.make,
@@ -106,9 +96,9 @@ crudRoutes.post('/create', el.ensureLoggedIn(), multerThing.array('picture1'), (
         description:          req.body.description,
         equipment:            req.body.equipment,
         features:             req.body.features,
-        picture1:              `/uploads/${pic}`,
+        picture1:              `/uploads/${filename}`
         // picture1:              `/uploads/${pic1}`,
-        picture2:              `/uploads/${pic2}`,
+        // picture2:              `/uploads/${pic2}`,
         // picture3:              `/uploads/${pic3}`,
         // picture4:              `/uploads/${pic4}`,
         // picture5:              `/uploads/${pic5}`,
@@ -124,6 +114,7 @@ crudRoutes.post('/create', el.ensureLoggedIn(), multerThing.array('picture1'), (
       newItem.save((err) => {
         if (err) {
           next(err);
+          console.log('/create ERROR', err);
           return;
         } else {
           req.flash('New car was successfully created.');
