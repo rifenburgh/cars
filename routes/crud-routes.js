@@ -1,5 +1,7 @@
 const express           = require('express');
 const crudRoutes        = express.Router();
+const mongoose          = require('mongoose');
+const bodyParser        = require('body-parser');
 const el                = require('connect-ensure-login');
 const Cars              = require('../models/cars-model');
 
@@ -12,7 +14,7 @@ const uploads           = multer({ dest: __dirname + '/../public/uploads/' });
 
 //  Renaming uploaded file solution from
 // https://github.com/expressjs/multer#diskstorage
-/*
+
 const storage           = multer.diskStorage({
   destination: (req, file, cb) => {
     // cb(null, '/../public/uploads');
@@ -22,8 +24,8 @@ const storage           = multer.diskStorage({
     cb(null, req.file.filename);
   }
 });
-const uploads       = multer({ storage: storage });
-*/
+// const uploads       = multer({ storage: storage });
+
 
 //Image Uploads
 /*
@@ -64,7 +66,7 @@ crudRoutes.post('/create', el.ensureLoggedIn(), uploads.single('picture1'), (req
 
 
       const filename    = req.file.filename;
-      console.log('/create picture1: ');
+      console.log('/create filename: ', filename);
       // const pic         = req.body.picture1;
       // const pic1        = req.body.picture1;
       // const pic2        = req.body.picture2;
@@ -96,7 +98,8 @@ crudRoutes.post('/create', el.ensureLoggedIn(), uploads.single('picture1'), (req
         description:          req.body.description,
         equipment:            req.body.equipment,
         features:             req.body.features,
-        picture1:              `/uploads/${filename}`
+        picture1:             `/uploads/${filename}`,
+        picture1_name:        filename
         // picture1:              `/uploads/${pic1}`,
         // picture2:              `/uploads/${pic2}`,
         // picture3:              `/uploads/${pic3}`,
