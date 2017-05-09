@@ -148,6 +148,9 @@ app.use('/', authRoutes);
 const crudRoutes        = require('./routes/crud-routes');
 app.use('/crud', crudRoutes);
 
+const apiRoutes         = require('./routes/api-routes');
+app.use('/api', apiRoutes);
+
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   const err = new Error('Not Found');

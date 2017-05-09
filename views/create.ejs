@@ -1,86 +1,79 @@
 <h2> Create New Car </h2>
 
+<div class="row">
+  <div class="col-md-4">
+
 <!-- <form action="/crud/create" method="POST" enctype="multipart/form-data"> -->
 <form action="/crud/create" method="POST" enctype="multipart/form-data">
-  <div>
-    <label for="make"> Make </label>
-    <input type="text" name="make">
-  </div>
-  <div>
-    <label for="model"> Model </label>
-    <input type="text" name="model">
-  </div>
-  <div>
-    <label for="year"> Year </label>
-    <input type="text" name="year">
-  </div>
-  <div>
-    <label for="miles"> Miles </label>
-    <input type="text" name="miles">
-  </div>
-  <div>
-    <label for="price"> Price </label>
-    <input type="text" name="price">
-  </div>
-  <div>
-    <label for="vin"> VIN </label>
-    <input type="text" name="vin">
-  </div>
-  <div>
-    <label for="stock"> Stock </label>
-    <input type="text" name="stock">
-  </div>
-  <div>
-    <label for="trim"> Trim </label>
-    <input type="text" name="trim">
-  </div>
-  <div>
-    <label for="transmission"> Transmission </label>
-    <input type="text" name="transmission">
-  </div>
-  <div>
-    <label for="speeds"> Speeds </label>
-    <input type="text" name="speeds">
-  </div>
-  <div>
-    <label for="engine"> Engine </label>
-    <input type="text" name="engine">
-  </div>
-  <div>
-    <label for="fuel"> Fuel </label>
-    <input type="text" name="fuel" value="Gasoline">
-  </div>
-  <div>
-    <label for="ext"> Exterior </label>
-    <input type="text" name="ext">
-  </div>
-  <div>
-    <label for="int"> Interior </label>
-    <input type="text" name="int">
-  </div>
-  <div>
-    <label for="show"> Show in Inventory</label>
-    <input type="text" name="show" value="True">
-  </div>
-  <div>
-    <label for="description"> <data value=""></data>Description </label>
-    <textarea name="description" rows="6" >
-    </textarea>
-  </div>
-  <div>
-    <label for="equipment"> Equipment </label>
-    <textarea name="equipment" rows="6" >
-    </textarea>
-  </div>
+  <button type="submit" class="btn btn-primary">Create New Car</button>
+
+  <table>
+    <tr><div>
+      <td><label for="make"> Make </label></td>
+      <td><input type="text" name="make"></td>
+    </div></tr>
+    <tr><div>
+      <td><label for="model"> Model </label></td>
+      <td><input type="text" name="model"></td>
+    </div></tr>
+    <tr><div>
+      <td><label for="year"> Year </label></td>
+      <td><input type="text" name="year"></td>
+    </div></tr>
+    <tr><div>
+      <td><label for="miles"> Miles </label></td>
+      <td><input type="text" name="miles"></td>
+    </div></tr>
+    <tr><div>
+      <td><label for="price"> Price </label></td>
+      <td><input type="text" name="price"></td>
+    </div></tr>
+    <tr><div>
+      <td><label for="vin"> VIN </label></td>
+      <td><input type="text" name="vin"></td>
+    </div></tr>
+    <tr><div>
+      <td><label for="stock"> Stock </label></td>
+      <td><input type="text" name="stock"></td>
+    </div></tr>
+    <tr><div>
+      <td><label for="trim"> Trim </label></td>
+      <td><input type="text" name="trim"></td>
+    </div></tr>
+    <tr><div>
+      <td><label for="transmission"> Transmission </label></td>
+      <td><input type="text" name="transmission"></td>
+    </div></tr>
+    <tr><div>
+      <td><label for="speeds"> Speeds </label></td>
+      <td><input type="text" name="speeds"></td>
+    </div></tr>
+    <tr><div>
+      <td><label for="engine"> Engine </label></td>
+      <td><input type="text" name="engine"></td>
+    </div></tr>
+    <tr><div>
+      <td><label for="fuel"> Fuel </label></td>
+      <td><input type="text" name="fuel" value="Gasoline"></td>
+    </div></tr>
+    <tr><div>
+      <td><label for="ext"> Exterior </label></td>
+      <td><input type="text" name="ext"></td>
+    </div></tr>
+    <tr><div>
+      <td><label for="int"> Interior </label></td>
+      <td><input type="text" name="int"></td>
+    </div></tr>
+    <tr><div>
+      <td><label for="show"> Show in Inventory</label></td>
+      <td><input type="text" name="show" value="True"></td>
+    </div></tr>
+  </table>
   <!-- <div>
     <label for="features"> Features </label>
     <input type="text" cols="50" rows="6" name="features" textarea rows="4" cols="50">
   </div> -->
-  <div>
-    <label for="features"> Features </label>
-    <textarea name="features" rows="6" >Features
-    </textarea>
-</div>
+
 
 
 
@@ -88,15 +81,20 @@
 <!-- https://codeforgeek.com/2016/01/multiple-file-upload-node-js/ -->
 <!-- <input type="file" name="" multiple /> -->
 
-
-<div>
-  <label for="picture1"> Picture(s) </label>
-  <input id="picture1" type="file" name="picture1" multiple="multiple">
 </div>
+<div class="col-md-4">
+  <table>
+    <tr><div>
+      <td><label for="picture1"> Picture </label></td>
+      <td><input id="picture1" type="file" name="picture1" multiple="multiple"></td>
+    </div></td>
+  </table>
+
+
 <!--
 <div>
-  <label for="picture2"> Picture 2 </label>
-  <input id="picture2" type="file" name="picture2">
+<label for="picture2"> Picture 2 </label>
+<input id="picture2" type="file" name="picture2">
 </div>
 -->
 
@@ -127,7 +125,29 @@
   <input id="picture10" type="file" name="picture10">
 </div> -->
 
+</div>
+<div class="col-md-4">
+  <table>
+    <tr><div>
+      <td><label for="description"> <data value=""></data>Description </label></td>
+      <td><textarea name="description" rows="6" >
+      </textarea></td>
+    </div></tr>
+    <tr><div>
+      <td><label for="equipment"> Equipment </label></td>
+      <td><textarea name="equipment" rows="6" >
+      </textarea></td>
+    </div></tr>
+    <tr><div>
+      <td><label for="features"> Features </label></td>
+      <td><textarea name="features" rows="6" >Features
+      </textarea></td>
+    </div></tr>
+  </table>
+</div>
 
 
-<button type="submit" class="btn btn-primary">Create</button>
 </form>
+
+
+</div>

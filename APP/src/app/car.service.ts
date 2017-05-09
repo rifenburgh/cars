@@ -17,4 +17,12 @@ export class CarService {
       .toPromise()
       .then(apiResponse => apiResponse.json())
   }
+
+  //Request All current items from the API
+  all() {
+    const options = { withCredentials: true };
+    return this.myHttp.get(`${this.BASE_URL}/api/all`)
+      .toPromise()
+      .then(apiResponse => apiResponse.json())
+  }
 }

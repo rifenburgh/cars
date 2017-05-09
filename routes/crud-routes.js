@@ -27,35 +27,33 @@ const storage           = multer.diskStorage({
 // const uploads       = multer({ storage: storage });
 
 
-//Image Uploads
-/*
-    const multer = require('multer');
-    const multerThing = multer({ dest: __dirname + '/../public/uploads/' });
-    crudRoutes.post('/addimage',
-      el.ensureLoggedIn(),
-        // <input id="picture-input" type="file" name="picture">
-      multerThing.single('picture'),
-      (req, res, next) => {
-        const filename = req.file.filename;
-        const newRoom = new Room ({
-          name:  req.body.name,
-          desc:  req.body.desc,
-          picture: `/uploads/${filename}`,
-          owner: req.user._id   // <-- we add the user ID
-        });
 
-        newCar.save((err) => {
-          if (err) {
-            next(err);
-            return;
-          } else {
-            req.flash('success', 'Your room has been created.');
-            res.redirect('/rooms/new');
-          }
-        });
-      }
-    );
+//Upload files and retain the original filename (from Nizar!)
+/*
+const multer = require('multer');
+const path = require('path');
+
+
+const myStorage = multer.diskStorage({
+  // 'destination' performs the role of 'dest' when using 'storage'
+  destination: (req, file, cb) => {
+    cb(null, path.join(__dirname, '../public/my-uploads'));
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  }
+});
+
+const myUploader = multer({
+  storage: myStorage
+  // 'dest' & 'storage' options are mutually exclusive
+  // dest: path.join(__dirname, '../public/my-uploads')
+});
 */
+
+
+
+
 
 crudRoutes.get('/create', el.ensureLoggedIn(), (req, res, next) => {
   res.render('create.ejs', {});
@@ -181,12 +179,144 @@ crudRoutes.get('/item/:id/edit', (req, res, next) => {
 
 crudRoutes.post('/item/:id/edit', (req, res, next) => {
   const itemId          = req.params.id;
-  const itemUpdates     = {
-    make:               req.body.make,
-    model:              req.body.model,
-    year:               req.body.year,
-    picture1:           req.body.picture1
-  };
+  const itemUpdates     = {};
+  //make
+  if (req.body.make !== null ) {
+    const itemUpdates   = {
+      make:             req.body.make
+    };
+    Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
+  }
+  //model
+  if (req.body.make !== null ) {
+    const itemUpdates   = {
+      make:             req.body.make
+    };
+    Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
+  }
+  //year
+  if (req.body.make !== null ) {
+    const itemUpdates   = {
+      make:             req.body.make
+    };
+    Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
+  }
+  //miles
+  if (req.body.make !== null ) {
+    const itemUpdates   = {
+      make:             req.body.make
+    };
+    Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
+  }
+  //price
+  if (req.body.make !== null ) {
+    const itemUpdates   = {
+      make:             req.body.make
+    };
+    Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
+  }
+  //vin
+  if (req.body.make !== null ) {
+    const itemUpdates   = {
+      make:             req.body.make
+    };
+    Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
+  }
+  //stock
+  if (req.body.make !== null ) {
+    const itemUpdates   = {
+      make:             req.body.make
+    };
+    Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
+  }
+  //trim
+  if (req.body.make !== null ) {
+    const itemUpdates   = {
+      make:             req.body.make
+    };
+    Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
+  }
+  //transmission
+  if (req.body.make !== null ) {
+    const itemUpdates   = {
+      make:             req.body.make
+    };
+    Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
+  }
+  //speeds
+  if (req.body.make !== null ) {
+    const itemUpdates   = {
+      make:             req.body.make
+    };
+    Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
+  }
+  //engine
+  if (req.body.make !== null ) {
+    const itemUpdates   = {
+      make:             req.body.make
+    };
+    Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
+  }
+  //fuel
+  if (req.body.make !== null ) {
+    const itemUpdates   = {
+      make:             req.body.make
+    };
+    Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
+  }
+  //ext (exterior)
+  if (req.body.make !== null ) {
+    const itemUpdates   = {
+      make:             req.body.make
+    };
+    Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
+  }
+  //int (interior)
+  if (req.body.make !== null ) {
+    const itemUpdates   = {
+      make:             req.body.make
+    };
+    Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
+  }
+  //show (display in inventory)
+  if (req.body.make !== null ) {
+    const itemUpdates   = {
+      make:             req.body.make
+    };
+    Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
+  }
+  //description
+  if (req.body.make !== null ) {
+    const itemUpdates   = {
+      make:             req.body.make
+    };
+    Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
+  }
+  //equipment
+  if (req.body.make !== null ) {
+    const itemUpdates   = {
+      make:             req.body.make
+    };
+    Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
+  }
+  //features
+  if (req.body.make !== null ) {
+    const itemUpdates   = {
+      make:             req.body.make
+    };
+    Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
+  }
+  //picture1 
+  if (req.body.make !== null ) {
+    const itemUpdates   = {
+      make:             req.body.make
+    };
+    Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
+  }
+
+
+
+
   Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {
     res.redirect('/all');
   });

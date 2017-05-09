@@ -1,4 +1,20 @@
 <h2> Edit Car </h2>
 
-<%= picture %>
-<p> Items.picture <%= items.picture %> </p>
+
+<div class="row">
+  <div class="col-md-4">
+    <table>
+      <tr>
+        <td><label for="make"> Make: <%= items.make %> </label></td>
+        <td><input type="text" name="make"></td>
+        <td onclick="updatemake()">Update</td>
+
+      </tr>
+    </table>
+  </div>
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-4">
+  </div>
+
+</div>
