@@ -188,128 +188,128 @@ crudRoutes.post('/item/:id/edit', (req, res, next) => {
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //model
-  if (req.body.make !== null ) {
+  if (req.body.model !== null ) {
     const itemUpdates   = {
-      make:             req.body.make
+      model:             req.body.model
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //year
-  if (req.body.make !== null ) {
+  if (req.body.year !== null ) {
     const itemUpdates   = {
-      make:             req.body.make
+      year:             req.body.year
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //miles
-  if (req.body.make !== null ) {
+  if (req.body.miles !== null ) {
     const itemUpdates   = {
-      make:             req.body.make
+      miles:             req.body.miles
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //price
-  if (req.body.make !== null ) {
+  if (req.body.price !== null ) {
     const itemUpdates   = {
-      make:             req.body.make
+      price:             req.body.price
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //vin
-  if (req.body.make !== null ) {
+  if (req.body.vin !== null ) {
     const itemUpdates   = {
-      make:             req.body.make
+      vin:             req.body.vin
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //stock
-  if (req.body.make !== null ) {
+  if (req.body.stock !== null ) {
     const itemUpdates   = {
-      make:             req.body.make
+      stock:             req.body.stock
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //trim
-  if (req.body.make !== null ) {
+  if (req.body.trim !== null ) {
     const itemUpdates   = {
-      make:             req.body.make
+      trim:             req.body.trim
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //transmission
-  if (req.body.make !== null ) {
+  if (req.body.transmission !== null ) {
     const itemUpdates   = {
-      make:             req.body.make
+      transmission:             req.body.transmission
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //speeds
-  if (req.body.make !== null ) {
+  if (req.body.speeds !== null ) {
     const itemUpdates   = {
-      make:             req.body.make
+      speeds:             req.body.speeds
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //engine
-  if (req.body.make !== null ) {
+  if (req.body.engine !== null ) {
     const itemUpdates   = {
-      make:             req.body.make
+      engine:             req.body.engine
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //fuel
-  if (req.body.make !== null ) {
+  if (req.body.fuel !== null ) {
     const itemUpdates   = {
-      make:             req.body.make
+      fuel:             req.body.fuel
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //ext (exterior)
-  if (req.body.make !== null ) {
+  if (req.body.ext !== null ) {
     const itemUpdates   = {
-      make:             req.body.make
+      ext:             req.body.ext
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //int (interior)
-  if (req.body.make !== null ) {
+  if (req.body.int !== null ) {
     const itemUpdates   = {
-      make:             req.body.make
+      int:             req.body.int
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //show (display in inventory)
-  if (req.body.make !== null ) {
+  if (req.body.show !== null ) {
     const itemUpdates   = {
-      make:             req.body.make
+      show:             req.body.show
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //description
-  if (req.body.make !== null ) {
+  if (req.body.description !== null ) {
     const itemUpdates   = {
-      make:             req.body.make
+      description:             req.body.description
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //equipment
-  if (req.body.make !== null ) {
+  if (req.body.equipment !== null ) {
     const itemUpdates   = {
-      make:             req.body.make
+      equipment:             req.body.equipment
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //features
-  if (req.body.make !== null ) {
+  if (req.body.features !== null ) {
     const itemUpdates   = {
-      make:             req.body.make
+      features:             req.body.features
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
-  //picture1 
-  if (req.body.make !== null ) {
+  //picture1
+  if (req.body.picture1 !== null ) {
     const itemUpdates   = {
-      make:             req.body.make
+      picture1:             req.body.picture1
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
