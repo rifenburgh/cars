@@ -181,11 +181,13 @@ crudRoutes.post('/item/:id/edit', (req, res, next) => {
   const itemId          = req.params.id;
   const itemUpdates     = {};
   //make
-  if (req.body.make !== null ) {
+  if (req.body.make !== undefined ) {
     const itemUpdates   = {
       make:             req.body.make
     };
-    Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
+    Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {
+      console.log('/edit Make', itemUpdates);
+    });
   }
   //model
   if (req.body.model !== null ) {
@@ -317,9 +319,9 @@ crudRoutes.post('/item/:id/edit', (req, res, next) => {
 
 
 
-  Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {
-    res.redirect('/all');
-  });
+  // Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {
+  //   res.redirect('/all');
+  // });
 });
 
 module.exports          = crudRoutes;

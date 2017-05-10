@@ -1,28 +1,28 @@
-<h2> Edit Car </h2>
-
+<p>
 
 <div class="row">
   <form action="/crud/item/<%= items._id %>/edit" method="POST" enctype="multipart/form-data">
+    <button type="submit" class="btn btn-primary"><h5>Update Vehicle</h5></button>
     <div class="col-md-4">
       <table>
         <tr>
-          <td><strong>make:</strong> <%= items.make %></td>
+          <td><strong>Make:</strong> <%= items.make %></td>
           <td><input type="text" name="make"></td>
         </tr>
         <tr>
-          <td><strong>model:</strong> <%= items.model %></td>
+          <td><strong>Model:</strong> <%= items.model %></td>
           <td><input type="text" name="model"></td>
         </tr>
         <tr>
-          <td><strong>year:</strong> <%= items.year %></td>
+          <td><strong>Year:</strong> <%= items.year %></td>
           <td><input type="text" name="year"></td>
         </tr>
         <tr>
-          <td><strong>miles:</strong> <%= items.miles %></td>
+          <td><strong>Miles:</strong> <%= items.miles %></td>
           <td><input type="text" name="miles"></td>
         </tr>
         <tr>
-          <td><strong>price:</strong> <%= items.price %></td>
+          <td><strong>Price:</strong> <%= items.price %></td>
           <td><input type="text" name="price"></td>
         </tr>
         <tr>
@@ -35,43 +35,43 @@
     <div class="col-md-4">
       <table>
         <tr>
-          <td><strong>vin:</strong> <%= items.vin %></td>
+          <td><strong>VIN:</strong> <%= items.vin %></td>
           <td><input type="text" name="vin"></td>
         </tr>
         <tr>
-          <td><strong>stock:</strong> <%= items.stock %></td>
+          <td><strong>Stock:</strong> <%= items.stock %></td>
           <td><input type="text" name="stock"></td>
         </tr>
         <tr>
-          <td><strong>trim:</strong> <%= items.trim %></td>
+          <td><strong>Trim:</strong> <%= items.trim %></td>
           <td><input type="text" name="trim"></td>
         </tr>
         <tr>
-          <td><strong>transmissions:</strong> <%= items.transmissions %></td>
+          <td><strong>Transmissions:</strong> <%= items.transmissions %></td>
           <td><input type="text" name="transmissions"></td>
         </tr>
         <tr>
-          <td><strong>speeds:</strong> <%= items.speeds %></td>
+          <td><strong>Speeds:</strong> <%= items.speeds %></td>
           <td><input type="text" name="speeds"></td>
         </tr>
         <tr>
-          <td><strong>engin:</strong> <%= items.engin %></td>
-          <td><input type="text" name="engin"></td>
+          <td><strong>Engine:</strong> <%= items.engine %></td>
+          <td><input type="text" name="engine"></td>
         </tr>
         <tr>
-          <td><strong>fuel:</strong> <%= items.fuel %></td>
+          <td><strong>Fuel:</strong> <%= items.fuel %></td>
           <td><input type="text" name="fuel"></td>
         </tr>
         <tr>
-          <td><strong>ext:</strong> <%= items.ext %></td>
+          <td><strong>Exterior:</strong> <%= items.ext %></td>
           <td><input type="text" name="ext"></td>
         </tr>
         <tr>
-          <td><strong>int:</strong> <%= items.int %></td>
+          <td><strong>Interior:</strong> <%= items.int %></td>
           <td><input type="text" name="int"></td>
         </tr>
         <tr>
-          <td><strong>show:</strong> <%= items.show %></td>
+          <td><strong>Show:</strong> <%= items.show %></td>
           <td><input type="text" name="show"></td>
         </tr>
 
@@ -80,15 +80,15 @@
     <div class="col-md-4">
       <table>
         <tr>
-          <td><strong>description:</strong> <%= items.description %></td>
+          <td><strong>Description:</strong> <%= items.description %></td>
           <td><textarea name="description" rows="4" ></textarea></td>
         </tr>
         <tr>
-          <td><strong>equipment:</strong> <%= items.equipment %></td>
+          <td><strong>Equipment:</strong> <%= items.equipment %></td>
           <td><textarea name="equipment" rows="4" ></textarea></td>
         </tr>
         <tr>
-          <td><strong>features:</strong> <%= items.features %></td>
+          <td><strong>Features:</strong> <%= items.features %></td>
           <td><textarea name="features" rows="4" ></textarea></td>
         </tr>
 
