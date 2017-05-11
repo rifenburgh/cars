@@ -13,7 +13,7 @@ export class CarService {
 
   carDetails(item) {
     const options = { withCredentials: true };
-    return this.myHttp.get(`${this.BASE_URL}/api/car/${item}`)
+    return this.myHttp.get(`${this.BASE_URL}/api/car/${item}`, options)
       .toPromise()
       .then(apiResponse => apiResponse.json())
   }
@@ -22,6 +22,13 @@ export class CarService {
   all() {
     const options = { withCredentials: true };
     return this.myHttp.get(`${this.BASE_URL}/api/all`)
+      .toPromise()
+      .then(apiResponse => apiResponse.json())
+  }
+  //Request the first 3 current items from the API
+  three() {
+    const options = { withCredentials: true };
+    return this.myHttp.get(`${this.BASE_URL}/api/three`)
       .toPromise()
       .then(apiResponse => apiResponse.json())
   }

@@ -17,11 +17,14 @@ export class IndexComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.myCar.all()
+    this.myCar.three()
       .then((item) => {
         this.items = item;
         console.log(item);
       });
+  }
+  details(id) {
+    console.log('/Index car details');
   }
 
 }

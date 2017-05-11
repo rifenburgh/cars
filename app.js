@@ -15,6 +15,7 @@ const bcrypt            = require('bcrypt');
 const flash             = require('connect-flash');
 const dotenv            = require('dotenv');
 const User              = require('./models/user-model');
+const cors              = require('cors');
 //npm install --save express-session passport passport-local passport-facebook passport-google-oauth bcrypt connect-flash dotenv
 //REFile to resize images
 
@@ -38,7 +39,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
-
+if (process.env.NODE_ENV !== 'production') {
+  app.use(cors({
+    credentials: true,
+    origin: ['http://localhost:4200', 'http://localhost:3000']
+  }));
+}
 
 // const index             = require('./routes/index');
 // app.use('/', index);
