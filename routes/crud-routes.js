@@ -4,6 +4,7 @@ const mongoose          = require('mongoose');
 const bodyParser        = require('body-parser');
 const el                = require('connect-ensure-login');
 const Cars              = require('../models/cars-model');
+const Quotes            = require('../models/quotes-model');
 
 const multer            = require('multer');
 //Solution from example W5D3L1
@@ -124,6 +125,8 @@ crudRoutes.post('/create', el.ensureLoggedIn(), uploads.single('picture1'), (req
       });
     });
 
+
+
 crudRoutes.get('/edit', el.ensureLoggedIn(), (req, res, next) => {});
 
 crudRoutes.post('/edit', el.ensureLoggedIn(), (req, res, next) => {});
@@ -135,6 +138,31 @@ crudRoutes.get('/all', (req, res, next) => {
       return;
     }
     res.render('all.ejs', { items: item });
+  });
+});
+
+crudRoutes.get('/allquotes', (req, res, next) => {
+  Quotes.find((err, item) => {
+    if (err) {
+      next(err);
+      return;
+    }
+    res.render('all-quotes.ejs', { items: item });
+  });
+});
+
+crudRoutes.post('/createquote', (req, res, next) => {
+  const newItem         = new Quotes ({
+  author:               req.body.author,
+  date:                 req.body.date,
+  quote:                req.body.quote
+  });
+  newItem.save((err) => {
+    if (err) {
+    next(err);
+    return;
+    }
+    res.redirect('/');
   });
 });
 
@@ -190,126 +218,126 @@ crudRoutes.post('/item/:id/edit', (req, res, next) => {
     });
   }
   //model
-  if (req.body.model !== null ) {
+  if (req.body.model !== "" ) {
     const itemUpdates   = {
       model:             req.body.model
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //year
-  if (req.body.year !== null ) {
+  if (req.body.year !== "" ) {
     const itemUpdates   = {
       year:             req.body.year
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //miles
-  if (req.body.miles !== null ) {
+  if (req.body.miles !== "" ) {
     const itemUpdates   = {
       miles:             req.body.miles
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //price
-  if (req.body.price !== null ) {
+  if (req.body.price !== "" ) {
     const itemUpdates   = {
       price:             req.body.price
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //vin
-  if (req.body.vin !== null ) {
+  if (req.body.vin !== "" ) {
     const itemUpdates   = {
       vin:             req.body.vin
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //stock
-  if (req.body.stock !== null ) {
+  if (req.body.stock !== "" ) {
     const itemUpdates   = {
       stock:             req.body.stock
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //trim
-  if (req.body.trim !== null ) {
+  if (req.body.trim !== "" ) {
     const itemUpdates   = {
       trim:             req.body.trim
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //transmission
-  if (req.body.transmission !== null ) {
+  if (req.body.transmission !== "" ) {
     const itemUpdates   = {
       transmission:             req.body.transmission
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //speeds
-  if (req.body.speeds !== null ) {
+  if (req.body.speeds !== "" ) {
     const itemUpdates   = {
       speeds:             req.body.speeds
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //engine
-  if (req.body.engine !== null ) {
+  if (req.body.engine !== "" ) {
     const itemUpdates   = {
       engine:             req.body.engine
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //fuel
-  if (req.body.fuel !== null ) {
+  if (req.body.fuel !== "" ) {
     const itemUpdates   = {
       fuel:             req.body.fuel
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //ext (exterior)
-  if (req.body.ext !== null ) {
+  if (req.body.ext !== "" ) {
     const itemUpdates   = {
       ext:             req.body.ext
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //int (interior)
-  if (req.body.int !== null ) {
+  if (req.body.int !== "" ) {
     const itemUpdates   = {
       int:             req.body.int
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //show (display in inventory)
-  if (req.body.show !== null ) {
+  if (req.body.show !== "" ) {
     const itemUpdates   = {
       show:             req.body.show
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //description
-  if (req.body.description !== null ) {
+  if (req.body.description !== "" ) {
     const itemUpdates   = {
       description:             req.body.description
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //equipment
-  if (req.body.equipment !== null ) {
+  if (req.body.equipment !== "" ) {
     const itemUpdates   = {
       equipment:             req.body.equipment
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //features
-  if (req.body.features !== null ) {
+  if (req.body.features !== "" ) {
     const itemUpdates   = {
       features:             req.body.features
     };
     Cars.findByIdAndUpdate(itemId, itemUpdates, (err, updates) => {});
   }
   //picture1
-  if (req.body.picture1 !== null ) {
+  if (req.body.picture1 !== "" ) {
     const itemUpdates   = {
       picture1:             req.body.picture1
     };

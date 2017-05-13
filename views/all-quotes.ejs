@@ -1,0 +1,46 @@
+<h2> All Quotes </h2>
+
+<table class="table">
+  <tr>
+    <td>Customer Name</td>
+    <td>Date</td>
+    <td width="400">Quote</td>
+    <td>Edit Page</td>
+    <td>Delete</td>
+  </td>
+
+<% for (i = 0; i < items.length; i++) { %>
+<tr>
+  <td><%= items[i].author %></td>
+  <td><%= items[i].date %></td>
+  <td><%= items[i].quote %></td>
+  <td><a href="../crud/quote/<%= items[i].id %>">Detail Page (Future Feature)</a></td>
+  <td><a href="../crud/quote/<%= items[i].id %>/edit">Edit (Future Feature)</a></td>
+  <td>Future Feature</td>
+  <td><a href="../crud/item/<%= items[i].id %>/delete">Delete</a></td>
+
+</tr>
+<% } %>
+<tr>
+  <form action="/crud/createquote" method="POST" enctype="multipart/form-data">
+    <td>
+      <label name="author">Author</label>
+      <input type="text" name="author">
+    </td>
+    <td>
+      <label name="date">Date</label>
+      <input type="text" name="date">
+    </td>
+    <td>
+      <label name="quote">Quote</label>
+      <br>
+      <input type="text" name="quote">
+    </td>
+    <td><button class="btn btn-primary" type="submit">Create New</button></td>
+    <td></td>
+    <td></td>
+    <td></td>
+
+  </form>
+</tr>
+</table>

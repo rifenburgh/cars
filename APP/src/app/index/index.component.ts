@@ -12,6 +12,7 @@ export class IndexComponent implements OnInit {
 
   car: Array<any>       = [];
   items:                Object;
+  detail:               Object;
   constructor(
     private myCar:      CarService
   ) { }
@@ -23,7 +24,11 @@ export class IndexComponent implements OnInit {
         console.log(item);
       });
   }
-  details(id) {
+  carDetails(id) {
+    /*
+    this.myCar.carDetails(id)
+      .then((detail) => {});
+    */
     console.log('/Index car details');
   }
 

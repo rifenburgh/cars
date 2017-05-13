@@ -1,11 +1,27 @@
 <h2> All Items </h2>
 
+<table class="table">
+  <tr>
+    <td>Vehicle</td>
+    <td>Price</td>
+    <td>Miles</td>
+    <td>Detail Page</td>
+    <td>Edit Page</td>
+    <td>Sold</td>
+    <td>Delete</td>
+
+  </td>
+
 <% for (i = 0; i < items.length; i++) { %>
+<tr>
+  <td><img src=<%= items[i].picture1 %> width="100" /></td>
+  <td>$ <%= items[i].price %></td>
+  <td><%= items[i].miles %></td>
+  <td><a href="../crud/item/<%= items[i].id %>">Detail Page</a></td>
+  <td><a href="../crud/item/<%= items[i].id %>/edit">Edit</a></td>
+  <td>Future Feature</td>
+  <td><a href="../crud/item/<%= items[i].id %>/delete">Delete</a></td>
 
-  <br><img src=<%= items[i].picture1 %> width="100" />
-  <br><a href="../crud/item/<%= items[i].id %>">Detail Page</a>
-  <br><a href="../crud/item/<%= items[i].id %>/edit">Edit</a>
-  <br><a href="../crud/item/<%= items[i].id %>/delete">Delete</a>
-
-
+</tr>
 <% } %>
+</table>

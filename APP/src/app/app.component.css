@@ -11,3 +11,14 @@ footer {
   text-align: center;
   color: grey;
 }
+.threeCars {
+  text-align: center;
+}
+.carouselSpacer {
+  padding-top: 200px;
+}
+.quoteHeader {
+  align: right;
+  text-align: right;
+
+}

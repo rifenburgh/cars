@@ -1,0 +1,44 @@
+<br>
+<br>
+<br>
+
+<br>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-8"></div>
+  <div class="col-sm-2">
+    <h6>Sort By: Price | Year | Miles</h6>
+  </div>
+  <div class="col-sm-1"></div>
+
+</div>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10">
+    <table class="table table-hover" width="100%">
+      <tr>
+        <td></td>
+        <td>Year</td>
+        <td>Make</td>
+        <td>Model</td>
+        <td>Exterior</td>
+        <td>Interior</td>
+        <td>Miles</td>
+        <td>Price</td>
+      </tr>
+      <tr *ngFor="let item of items">
+        <td><img src="http://localhost:3000{{ item.picture1 }}" width="100"/></td>
+        <td>{{ item.year }}</td>
+        <td>{{ item.make }}</td>
+        <td>{{ item.model }}</td>
+        <td>{{ item.ext }}</td>
+        <td>{{ item.int }}</td>
+        <td>{{ item.miles }}</td>
+        <td>{{ item.price | currency:'usd':true:'1.0-0'}}</td>
+      </tr>
+
+    </table>
+  </div>
+  <div class="col-sm-1"></div>
+
+</div>
