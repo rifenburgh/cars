@@ -17,30 +17,36 @@
   <td><a href="../crud/quote/<%= items[i].id %>">Detail Page (Future Feature)</a></td>
   <td><a href="../crud/quote/<%= items[i].id %>/edit">Edit (Future Feature)</a></td>
   <td>Future Feature</td>
-  <td><a href="../crud/item/<%= items[i].id %>/delete">Delete</a></td>
+  <td><a href="../crud/quotes/<%= items[i].id %>/delete">Delete</a></td>
 
 </tr>
 <% } %>
-<tr>
-  <form action="/crud/createquote" method="POST" enctype="multipart/form-data">
-    <td>
-      <label name="author">Author</label>
-      <input type="text" name="author">
-    </td>
-    <td>
-      <label name="date">Date</label>
-      <input type="text" name="date">
-    </td>
-    <td>
-      <label name="quote">Quote</label>
-      <br>
-      <input type="text" name="quote">
-    </td>
-    <td><button class="btn btn-primary" type="submit">Create New</button></td>
-    <td></td>
-    <td></td>
-    <td></td>
 
-  </form>
-</tr>
 </table>
+<div class="createNewQuote">
+  <!-- <form action="../crud/allquotes" method="POST" enctype="multipart/form-data"> -->
+  <form action="../crud/allquotes" method="POST">
+
+    <table class="table">
+      <tr>
+        <td>
+          <label name="author">Author</label>
+          <input type="text" name="author">
+        </td>
+        <td>
+          <label name="date">Date</label>
+          <input type="text" name="date">
+        </td>
+        <td width="400">
+          <label name="quote">Quote</label>
+          <input type="text" name="quote">
+        </td>
+        <td><button class="btn btn-primary" type="submit">Create New</button></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+    </table>
+  </form>
+</div>

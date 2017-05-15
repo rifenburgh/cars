@@ -151,18 +151,32 @@ crudRoutes.get('/allquotes', (req, res, next) => {
   });
 });
 
-crudRoutes.post('/createquote', (req, res, next) => {
+crudRoutes.post('/allquotes', (req, res, next) => {
+  console.log('req.body.author', req.body.author);
+  console.log('req.body', req.body);
   const newItem         = new Quotes ({
-  author:               req.body.author,
-  date:                 req.body.date,
-  quote:                req.body.quote
+    author:               req.body.author,
+    date:                 req.body.date,
+    quote:                req.body.quote
   });
   newItem.save((err) => {
     if (err) {
     next(err);
     return;
     }
+    console.log('New Quote Saved.');
     res.redirect('/');
+  });
+});
+
+crudRoutes.get('/quotes/:id/delete', (req, res, next) => {
+  const itemId          = req.params.id;
+  Quotes.findByIdAndRemove(itemId, (err, item) => {
+    if (err) {
+      next(err);
+      return;
+    }
+    res.redirect('/crud/allquotes');
   });
 });
 
