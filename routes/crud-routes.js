@@ -142,7 +142,7 @@ crudRoutes.get('/all', (req, res, next) => {
 });
 
 crudRoutes.get('/allquotes', (req, res, next) => {
-  Quotes.find((err, item) => {
+  Quotes.find({}, null, { sort: {date: -1}}, (err, item) => {
     if (err) {
       next(err);
       return;

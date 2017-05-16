@@ -30,6 +30,17 @@ apiRoutes.get('/three', (req, res, next) => {
   });
 });
 
+//Get Quotes
+apiRoutes.get('/quotes', (req, res, next) => {
+  Quotes.find({}, null, { date: 1 }, (err, items) => {
+    if (err) {
+      next(err);
+      return;
+    }
+    res.json(items);
+  });
+});
+
 //Show details of specific item
 apiRoutes.get('/detail/:id', (req, res, next) => {
 

@@ -5,18 +5,17 @@
     <td>Customer Name</td>
     <td>Date</td>
     <td width="400">Quote</td>
-    <td>Edit Page</td>
+    <!-- <td>Edit Page</td> -->
     <td>Delete</td>
-  </td>
+  </tr>
 
 <% for (i = 0; i < items.length; i++) { %>
 <tr>
   <td><%= items[i].author %></td>
   <td><%= items[i].date %></td>
   <td><%= items[i].quote %></td>
-  <td><a href="../crud/quote/<%= items[i].id %>">Detail Page (Future Feature)</a></td>
-  <td><a href="../crud/quote/<%= items[i].id %>/edit">Edit (Future Feature)</a></td>
-  <td>Future Feature</td>
+  <!-- <td><a href="../crud/quote/<%= items[i].id %>">Detail Page (Future Feature)</a></td> -->
+  <!-- <td><a href="../crud/quote/<%= items[i].id %>/edit">Edit (Future Feature)</a></td> -->
   <td><a href="../crud/quotes/<%= items[i].id %>/delete">Delete</a></td>
 
 </tr>
@@ -42,9 +41,7 @@
           <input type="text" name="quote">
         </td>
         <td><button class="btn btn-primary" type="submit">Create New</button></td>
-        <td></td>
-        <td></td>
-        <td></td>
+
       </tr>
 
     </table>

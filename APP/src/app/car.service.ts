@@ -32,4 +32,11 @@ export class CarService {
       .toPromise()
       .then(apiResponse => apiResponse.json())
   }
+  //Request quotes from Quotes collection
+  quotes() {
+    const options = { withCredentials: true };
+    return this.myHttp.get(`${this.BASE_URL}/api/quotes`)
+      .toPromise()
+      .then(apiResponse => apiResponse.json())
+  }
 }

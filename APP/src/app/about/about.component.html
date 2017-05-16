@@ -12,10 +12,10 @@
   </div>
   <div class="col-sm-5">
     <h4 class="quoteHeader">Hear What Our Customers Have To Say</h4>
-    <div >
+    <div *ngFor="let item of items">
       <blockquote class="pull-right">
-        <p>A fanatic is one who can't change his mind and won't change the subject.</p>
-        <small>by <cite>Winston Churchill</cite></small>
+        <p>{{ item.quote }}</p>
+        <small>by <cite>{{ item.author }} <cite *ngIf="item.date !== ''">on {{ item.date }}</cite></cite></small>
       </blockquote>
     </div>
   </div>
