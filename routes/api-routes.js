@@ -43,7 +43,6 @@ apiRoutes.get('/quotes', (req, res, next) => {
 
 //Show details of specific item
 apiRoutes.get('/detail/:id', (req, res, next) => {
-
   Cars.findById(req.params.id, (err, items) => {
     if (err) {
       res.json(err);
@@ -51,7 +50,6 @@ apiRoutes.get('/detail/:id', (req, res, next) => {
     }
     res.json(items);
   });
-
 });
 
 

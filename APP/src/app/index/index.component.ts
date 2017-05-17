@@ -14,7 +14,9 @@ export class IndexComponent implements OnInit {
   items:                Object;
   detail:               Object;
   constructor(
-    private myCar:      CarService
+    private myCar:      CarService,
+    private myRoute:    ActivatedRoute,
+    private myNavigator: Router
   ) { }
 
   ngOnInit() {
@@ -30,6 +32,10 @@ export class IndexComponent implements OnInit {
       .then((detail) => {});
     */
     console.log('/Index car details');
+    this.myCar.detail(id)
+      .then((apiResult) => {
+        this.myNavigator.navigate([`api/details/${id}`]);
+      })
   }
 
 }

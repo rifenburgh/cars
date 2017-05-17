@@ -12,6 +12,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class InventoryComponent implements OnInit {
 
   items:                Object;
+  details:              Object;
+  selectedItem:         String;
+
   constructor(
     private myCar: CarService
   ) { }
@@ -22,7 +25,13 @@ export class InventoryComponent implements OnInit {
         this.items = item;
         console.log('/inventory onInit', this.items);
       });
-
+  }
+  detail(id) {
+    this.selectedItem = id;
+    this.myCar.detail(id)
+      .then((item) => {
+        this.details = item;
+      });
   }
 
 }

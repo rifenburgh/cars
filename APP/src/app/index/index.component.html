@@ -88,7 +88,7 @@
   <div class="row" >
       <div class="col-sm-1"></div>
       <div class="col-sm-3 threeCars" *ngFor="let item of items" >
-          <a href="#" (click)="carDetails(item._id)"><img class="img-circle img-responsive img-center" src="http://localhost:3000{{ item.picture1 }}" alt="Vehicle Picture" width="200" height="125"></a>
+          <img class="img-circle img-responsive img-center" src="http://localhost:3000{{ item.picture1 }}" (click)="carDetails(item._id)" alt="Vehicle Picture" width="200" height="125">
 
           <h3 class="threeCars">{{ item.price | currency : 'usd' : true : '1.0-0' }}</h3>
           <h4 class="threeCars">{{ item.make }} {{ item.model }} </h4>

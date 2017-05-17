@@ -7,14 +7,14 @@
   <div class="col-sm-1"></div>
   <div class="col-sm-8"></div>
   <div class="col-sm-2">
-    <h6>Sort By: Price | Year | Miles</h6>
+    <h6 *ngIf="details === null">Sort By: Price | Year | Miles</h6>
   </div>
   <div class="col-sm-1"></div>
 
 </div>
 <div class="row">
   <div class="col-sm-1"></div>
-  <div class="col-sm-10">
+  <div class="col-sm-5">
     <table class="table table-hover" width="100%">
       <tr>
         <td></td>
@@ -27,7 +27,7 @@
         <td>Price</td>
       </tr>
       <tr *ngFor="let item of items">
-        <td><img src="http://localhost:3000{{ item.picture1 }}" width="100"/></td>
+        <td> <img src="http://localhost:3000{{ item.picture1 }}" (click)="detail(item._id)" width="100"/></td>
         <td>{{ item.year }}</td>
         <td>{{ item.make }}</td>
         <td>{{ item.model }}</td>
@@ -39,6 +39,46 @@
 
     </table>
   </div>
+  <div class="col-sm-5" *ngIf="details">
+
+    <h3> Car Details </h3>
+    <h4> {{ details.year }} {{ details.make }} {{ details.model}}</h4>
+    <img src="http://localhost:3000{{ details.picture1 }}" width="100%" />
+      <div class="col-md-6">
+        <table class="table table-condensed">
+        <tr>
+
+        </tr>
+        <tr>
+          <td>This is a used vehicle.</td>
+        </tr>
+        <tr>
+          <td>Price:<td><td> {{ details.price | currency:'usd':true:'1.0-0' }}</td>
+        </tr>
+        <tr>
+          <td>Exterior Color:</td><td>{{ details.ext }}</td>
+        </tr>
+        <tr>
+          <td>Interior Color:</td><td> {{ details.int }}</td>
+        </tr>
+        <tr>
+          <td>Trim:</td><td> {{ details.trim }}</td>
+        </tr>
+        <tr>
+          <td>Transmission:</td><td>{{ details.transmission }}</td>
+        </tr>
+        </table>
+      </div>
+      <div class="col-md-6">
+        <table class="table table-condensed">
+          <tr>
+            <td>Miles:</td><td>{{ details.miles | number }}</td>
+          </tr>
+        </table>
+      </div>
+
+  </div>
+
   <div class="col-sm-1"></div>
 
 </div>
