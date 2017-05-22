@@ -41,41 +41,72 @@
   </div>
   <div class="col-sm-5" *ngIf="details">
 
-    <h3> Car Details </h3>
+    <h3 class="headliner"> Car Details </h3>
     <h4> {{ details.year }} {{ details.make }} {{ details.model}}</h4>
     <img src="http://localhost:3000{{ details.picture1 }}" width="100%" />
-      <div class="col-md-6">
-        <table class="table table-condensed">
-        <tr>
-
-        </tr>
-        <tr>
-          <td>This is a used vehicle.</td>
-        </tr>
-        <tr>
-          <td>Price:<td><td> {{ details.price | currency:'usd':true:'1.0-0' }}</td>
-        </tr>
-        <tr>
-          <td>Exterior Color:</td><td>{{ details.ext }}</td>
-        </tr>
-        <tr>
-          <td>Interior Color:</td><td> {{ details.int }}</td>
-        </tr>
-        <tr>
-          <td>Trim:</td><td> {{ details.trim }}</td>
-        </tr>
-        <tr>
-          <td>Transmission:</td><td>{{ details.transmission }}</td>
-        </tr>
-        </table>
-      </div>
-      <div class="col-md-6">
-        <table class="table table-condensed">
+      <div class="row">
+        <div class="col-md-6">
+          <table class="table table-condensed">
           <tr>
-            <td>Miles:</td><td>{{ details.miles | number }}</td>
+
           </tr>
-        </table>
+          <tr>
+            <td>This is a used vehicle.</td>
+          </tr>
+          <tr>
+            <td>Price:<td><td> {{ details.price | currency:'usd':true:'1.0-0' }}</td>
+          </tr>
+          <tr>
+            <td>Exterior Color:</td><td>{{ details.ext }}</td>
+          </tr>
+          <tr>
+            <td>Interior Color:</td><td> {{ details.int }}</td>
+          </tr>
+          <tr>
+            <td>Trim:</td><td> {{ details.trim }}</td>
+          </tr>
+          <tr>
+            <td>Transmission:</td><td>{{ details.transmission }}</td>
+          </tr>
+          </table>
+        </div>
+        <div class="col-md-6">
+          <table class="table table-condensed">
+            <tr>
+              <td>Miles:</td><td>{{ details.miles | number }}</td>
+            </tr>
+            <tr>
+              <td>Stock Number:</td><td>{{ details.stock }}</td>
+            </tr>
+            <tr>
+              <td>VIN:</td><td>{{ details.vin }}</td>
+            </tr>
+            <tr>
+              <td>Fuel Type:</td><td>{{ details.fuel }}</td>
+            </tr>
+            <tr>
+              <td>Engine:</td><td>{{ details.engine }}</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.autoclick.com/services/partners/creditform/ACCreditFormFill.aspx?ACCFX=27106o3752&itemID=904281" target="_blank"><img src="/assets/credit_approved.gif" /></a>
+            </tr>
+          </table>
+        </div>
       </div>
+
+      <p>{{ details.description}}</p>
+      <p>{{ details.equipment }}</p>
+      <p>{{ details.features }}</p>
+      <div *ngIf="details.picture2"><img src="http://localhost:3000{{ details.picture2 }}" width="100%" /></div>
+      <div *ngIf="details.picture3"><img src="http://localhost:3000{{ details.picture3 }}" width="100%" /></div>
+      <div *ngIf="details.picture4"><img src="http://localhost:3000{{ details.picture4 }}" width="100%" /></div>
+      <div *ngIf="details.picture5"><img src="http://localhost:3000{{ details.picture5 }}" width="100%" /></div>
+      <div *ngIf="details.picture6"><img src="http://localhost:3000{{ details.picture6 }}" width="100%" /></div>
+      <div *ngIf="details.picture7"><img src="http://localhost:3000{{ details.picture7 }}" width="100%" /></div>
+      <div *ngIf="details.picture8"><img src="http://localhost:3000{{ details.picture8 }}" width="100%" /></div>
+      <div *ngIf="details.picture9"><img src="http://localhost:3000{{ details.picture9 }}" width="100%" /></div>
+      <div *ngIf="details.picture10"><img src="http://localhost:3000{{ details.picture10 }}" width="100%" /></div>
+
 
   </div>
 

@@ -10,6 +10,7 @@ const multer            = require('multer');
 //Solution from example W5D3L1
 const uploads           = multer({ dest: __dirname + '/../public/uploads/' });
 
+
 //Simplist Solution
 // const uploads           = multer();
 
@@ -22,10 +23,14 @@ const storage           = multer.diskStorage({
     cb(null, './uploads');
   },
   filename: (req, file, cb) => {
-    cb(null, req.file.filename);
+    // cb(null, req.file.filename);
+    cb(null, file.originalname);
   }
 });
 // const uploads       = multer({ storage: storage });
+
+//Trying Multiple File Uploads - http://www.codingdefined.com/2016/01/multiple-file-upload-in-nodejs.html
+const upload            = multer({ storage: storage}).array('photos', 10);
 
 
 
@@ -111,6 +116,46 @@ crudRoutes.post('/create', el.ensureLoggedIn(), uploads.single('picture1'), (req
         // picture10:             `/uploads/${pic10}`,
 
         // owner:                req.user._id   // <-- we add the user ID
+      });
+      console.log('/create req.body.picture1', req.body.picture1);
+      newItem.save((err) => {
+        if (err) {
+          next(err);
+          console.log('/create ERROR', err);
+          return;
+        } else {
+          req.flash('New car was successfully created.');
+          res.redirect('/');
+        }
+      });
+    });
+
+//Multiple Upload playspace
+crudRoutes.post('/create2', el.ensureLoggedIn(), uploads.array('photos', 10), (req, res, next) => {
+      const filename    = req.files;
+      console.log('/create filename: ', filename);
+
+      const newItem = new Cars ({
+        make:                 req.body.make,
+        model:                req.body.model,
+        year:                 req.body.year,
+        miles:                req.body.miles,
+        price:                req.body.price,
+        vin:                  req.body.vin,
+        stock:                req.body.stock,
+        trim:                 req.body.trim,
+        transmission:         req.body.transmission,
+        speeds:               req.body.speeds,
+        engine:               req.body.engine,
+        fuel:                 req.body.fuel,
+        ext:                  req.body.ext,
+        int:                  req.body.int,
+        show:                 req.body.show,
+        description:          req.body.description,
+        equipment:            req.body.equipment,
+        features:             req.body.features,
+        picture1:             `/uploads/${filename}`,
+        picture1_name:        filename
       });
       console.log('/create req.body.picture1', req.body.picture1);
       newItem.save((err) => {
